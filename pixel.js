@@ -18,8 +18,8 @@ $(function(){
       start();
     } else {
       $("pixel").css({"top": y, "left": x});
-	}
-	_gaq.push(['_trackEvent', 'game', 'start']);
+    }
+    _gaq.push(['_trackEvent', 'game', 'start']);
   }
   function inside (el) {
     var $el = $(el);
@@ -37,11 +37,10 @@ $(function(){
   function guess (e) {
     // console.log("click", e.pageX - x, e.pageY - y, score(e))
     if (score(e) < win_zone) {
-    	win();
-		
-	} else {
-		_gaq.push(['_trackEvent', 'game', 'bad guess']);
-	}	
+      win();
+    } else {
+      _gaq.push(['_trackEvent', 'game', 'bad guess']);
+    }  
   }
   function score (e) {
     return abs(e.pageX - x) + abs(e.pageY - y);
